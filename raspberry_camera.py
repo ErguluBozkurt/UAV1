@@ -12,12 +12,9 @@ writer = cv2.VideoWriter("/home/raspberrypi/new_save.mp4", cv2.VideoWriter_fourc
 
 while True:
     _, frame = cap.read()
-    time.sleep(3)
-    cv2.imshow("Video", frame)
-
     writer.write(frame)
 
-    if(cv2.waitKey(1) & 0xFF == ord("q")):
+    if(cv2.waitKey(10) & 0xFF == ord("q")):
         break
 
 cap.release()
